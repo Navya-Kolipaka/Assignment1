@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Template</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="./assign.html">Assignment</a></li>
+        </ul>
+    </nav>
+
+    <!-- Carousel -->
+    <div class="carousel">
+        <div class="carousel-item active">Slide 1</div>
+        <div class="carousel-item">Slide 2</div>
+        <div class="carousel-item">Slide 3</div>
+    </div>
+
+    <!-- Cards -->
+    <div class="card-container">
+        <div class="card">
+            <h3>Card Title 1</h3>
+            <p>Some text about the card.</p>
+        </div>
+        <div class="card">
+            <h3>Card Title 2</h3>
+            <p>Some text about the card.</p>
+        </div>
+        <div class="card">
+            <h3>Card Title 3</h3>
+            <p>Some text about the card.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Website</p>
+    </footer>
+
+    <script>
+        // JavaScript for carousel functionality
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        
+        function showSlide(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % items.length;
+            showSlide(currentIndex);
+        }
+        
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    </script>
+</body>
+</html>
